@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[margin={1in}]{geometry}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[export]{adjustbox}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.5cm}
+
+\setmainfont{Times New Roman}
+
+\begin{document}
+    {\bf\centering $date$\par}
+
+    Dear $to$,
+
+    $body$
+
+    \vfill
+
+    \begin{minipage}{0.5\textwidth}
+        Sincerely, \par
+        $from$
+        \begin{figure}[H]
+            \includegraphics[scale=0.3]{images/signature.pdf}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{figure}[H]
+            \includegraphics[scale=0.2, right]{images/seal.png}
+        \end{figure}
+    \end{minipage}
+\end{document}
