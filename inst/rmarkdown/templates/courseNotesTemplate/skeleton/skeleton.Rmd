@@ -1,0 +1,28 @@
+---
+title: "Descriptive Title"
+author: "Edouard Des Parois Perrault"
+date: "`sys.Date`"
+topics:
+  - "Mathematics"
+  - "Trigonometry"
+  - "Functions"
+  - "Sinusoidals"
+prior_knowledge:
+  - "Intro to Trigonometry"
+  - "Intro to the Unit Circle"
+  - "Intro to Cosine Functions"
+toc: true
+output:
+  pdf_document:
+    keep_tex: true
+    template: "lesson.tex"
+    latex_engine: "lualatex"
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo = F, out.size="10cm", fig.align="center", fig.pos = "H")
+```
+
+# Lesson
+
+Learning stuff is great!

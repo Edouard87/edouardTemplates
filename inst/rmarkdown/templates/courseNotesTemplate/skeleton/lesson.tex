@@ -1,0 +1,116 @@
+
+\documentclass[twoside]{article}
+\usepackage{mdframed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[margin={1in}]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setmainfont{Times New Roman}
+
+\pagestyle{fancy}
+\fancyfoot[L,R,C]{}
+\fancyhead[L,R,C]{}
+$if(title)$
+\fancyhead[RO,LE]{$title$}
+$endif$
+\fancyfoot[C]{\includegraphics[scale=0.15]{template_images/seal.png}}
+\fancyhead[RE,LO]{\thepage}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.3cm}
+\setlength{\footskip}{60pt}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+    \begin{titlepage}
+        \begin{mdframed}[
+            linewidth=2pt,
+            linecolor=red!50,
+            frametitle={\huge Lesson Overview\par},
+            frametitlealignment={\centering},
+            frametitlerule=true,
+            frametitlerulewidth=2pt,
+            frametitlebackgroundcolor=red!10,
+            subtitleaboveline=true,
+            subtitlebelowline=true,
+            subtitleabovelinecolor=red!50,
+            subtitlebelowlinecolor=red!50,
+            subtitlebackgroundcolor=red!10,
+            frametitleaboveskip={0.5cm},
+            frametitlebelowskip={0.5cm}
+        ]
+            {
+                \centering
+                $if(title)$
+                {\Huge\bf $title$ \par}
+                $endif$
+                $if(author)$
+                \vspace{0.5cm}
+                {\large $author$ \par}
+                $endif$
+                $if(topics)$
+                \vspace{0.5cm}
+                \mdfsubtitle{Topics}
+                {
+                $for(topics)$
+                \colorbox{red}{\textcolor{white}{$topics$}}
+                $sep$
+                ,
+                $endfor$
+                \par}
+                $endif$
+                $if(prior_knowledge)$
+                {
+                \mdfsubtitle{Prior Knowledge}
+                $for(prior_knowledge)$
+                \colorbox{OliveGreen}{\textcolor{white}{$prior_knowledge$}}
+                $sep$
+                ,
+                $endfor$
+                \par}
+                $endif$
+                $if(linked_lessons)$
+                {
+                \mdfsubtitle{Linked Lessons}
+                $for(linked_lessons)$
+                \colorbox{YellowOrange}{\textcolor{white}{$linked_lessons$}}
+                $sep$
+                ,
+                $endfor$
+                \par}
+                $endif$
+                $if(further_reading)$
+                {
+                \mdfsubtitle{Further Reading}
+                $for(further_reading)$
+                \colorbox{CornflowerBlue}{\textcolor{white}{$further_reading$}}
+                $sep$
+                ,
+                $endfor$
+                \par}
+                $endif$
+            }
+        \end{mdframed}
+        \vfill
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[scale=0.2]{template_images/seal.png}
+        \end{minipage}
+    \end{titlepage}
+    $if(toc)$
+    \tableofcontents
+    $endif$
+    $body$
+    $if(bibliography)$
+    \newpage
+    \bibliographystyle{IEEEtran}
+    \bibliography{$bibliography$}
+    $endif$
+\end{document}
